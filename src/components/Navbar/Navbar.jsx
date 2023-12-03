@@ -1,6 +1,7 @@
 
 import logo from "../../assets/logo.png"
-import Cart from "../Cart/Cart"
+import CartWidget from "../CartWidget/CartWidget"
+
 
 const Navbar = () => {
     return (
@@ -11,15 +12,9 @@ const Navbar = () => {
                 <div className="text-slate-200 flex mx-5 gap-4 items-center">
                     <a href="#">Inicio</a>
                     <a href="#">Contacto</a>
-                    <Cart/>
+                    <CartWidget/>
                 </div>
-
-
-
-
             </header>
-
-
         </div>
     )
 }

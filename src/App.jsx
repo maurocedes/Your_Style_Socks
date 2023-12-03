@@ -1,6 +1,6 @@
 
 import './App.css'
-import Main from './components/Main/Main'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Navbar from './components/NavBar/NavBar'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='bg-cover bg-fixed bg-center bg-[url("/images/bg-telarana.jpeg")]'>
       <Navbar />
-      <Main />
+      <ItemListContainer greeting={'Dale a tus pies el estilo que se merece'} />
     </div>
   )
 }
