@@ -1,15 +1,14 @@
 import { BsCartPlus } from "react-icons/bs";
+import Button from "../Button/Button";
 
-const CardProduct = ({ thumbnail, title, price }) => {
+const CardProduct = ({item}) => {
     return (
-        <div className="flex flex-col w-60 bg-red-600 gap-2 p-2 rounded-lg items-center justify-between">
-            <img className="rounded-lg" src={thumbnail} alt={title} />
-            <h2 className="font-bold text-center">{title}</h2>
-            <p className="font-bold text-center">${price}</p>
-            <button>
-                <BsCartPlus className="flex-end" size={30} />
-            </button>
-        </div>
+        <div key={item.id} className="flex flex-col w-60 bg-red-600 gap-2 p-2 rounded-lg items-center justify-between">
+                    <img className="rounded-lg" src={item.thumbnail} alt={item.title} />
+                    <h2 className="font-bold text-center">{item.title}</h2>
+                    <p className="font-bold text-center">${item.price}</p>
+                    <Button>Ver Mas</Button>
+                </div>
     )
 }
 
