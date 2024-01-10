@@ -1,17 +1,20 @@
+import { useContext } from "react";
 import { BsCart4 } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
-    const notificationCount = 3
+    const {itemsInCart} =useContext(CartContext)
     return (
         <div>
-            <button className="relative">
+            <Link to={"/cart"} className="relative">
                 <BsCart4 size={50}/>
-                {notificationCount > 0 && (
+                
                     <span className="bg-red-500 text-white rounded-full px-2 absolute top-0 right-0">
-                        {notificationCount}
+                        {itemsInCart()}
                     </span>
-                )}
-            </button>
+                
+            </Link>
         </div>
     )
 }
