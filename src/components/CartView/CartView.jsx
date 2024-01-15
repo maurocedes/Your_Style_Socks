@@ -2,16 +2,27 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import Button from "../Button/Button"
 import { BsTrash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const CartView = () => {
 
     const { cart, totalCart, clearCart, removeItem } = useContext(CartContext)
 
+    if (cart.length === 0) {
+        return (
+            <div className="container m-auto">
+<h2 className="font-custom text-slate-200 text-5xl">Tu Carrito está vacío</h2>
+            <hr />
+            <p className="font-custom text-slate-200">Dale estilo a tu carrito</p>
+            <Button><Link to={"/"}>Volver</Link></Button>
+            </div>
+        )
+    }
+
     return (
         <div className="container m-auto">
             <h2 className="font-custom text-slate-200 text-5xl">Tu Carrito</h2>
             <hr />
-
             <ul className="flex flex-col gap-5">
                 {
                     cart.map((item) => (
@@ -27,14 +38,9 @@ const CartView = () => {
                         </li>
                     ))
                 }
-
-
-
             </ul>
             <h4 className="font-custom text-slate-200 text-5xl">TOTAL: $ {totalCart()}</h4>
-
             <Button onClick={clearCart}>Vaciar carrito</Button>
-
         </div>
     )
 }

@@ -10,8 +10,10 @@ import CartView from './components/CartView/CartView'
 
 function App() {
 
+  // bg-[url("/images/telarana-bg.avif")]
+
   return (
-    <div className='min-h-screen bg-cover bg-fixed bg-center bg-[url("/images/telarana-bg.avif")]'>
+    <div className='min-h-screen bg-cover bg-fixed bg-center bg-gradient-to-r from-red-950 to-zinc-950'>
       <CartContextProvider>
 
         <BrowserRouter>

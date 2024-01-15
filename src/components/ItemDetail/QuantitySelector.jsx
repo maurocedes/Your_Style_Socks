@@ -13,9 +13,9 @@ const QuantitySelector = ({cantidad,stock,setCantidad}) => {
 
     return (
         <div className="flex gap-5 items-center align-middle">
-            <FaRegSquareMinus size={20} onClick={substract} />
-            <span className="p-3">{cantidad}</span>
-            <FaRegSquarePlus size={20} onClick={add} />
+            <FaRegSquareMinus color="white" size={20} onClick={substract} />
+            <span className="p-3 text-slate-200">{cantidad}</span>
+            <FaRegSquarePlus color="white" size={20} onClick={add} />
         </div>
     )
 }

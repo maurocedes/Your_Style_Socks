@@ -31,13 +31,14 @@ const ItemDetail = ({ item }) => {
                     Volver
                 </Link>
             </Button>
-            <div className="flex w-max bg-red-600 gap-2 p-2 rounded-lg items-center my-3">
+            <div className="flex w-max gap-2 p-2 rounded-lg items-center my-3">
                 <img className="w-60 rounded-lg" src={item.thumbnail} alt={item.title} />
                 <div className="flex flex-col gap-6 p-5 justify-between items-center">
-                    <h2 className="font-bold text-center">{item.title}</h2>
-                    <p className="font-bold">${item.price}</p>
-                    {
-                        isInCart(item.id)
+                    <h2 className="font-bold text-slate-200 text-center">{item.title}</h2>
+                    <p className="font-bold text-slate-200">${item.price}</p>
+                    {item.stock === 0
+                        ? <p className="font-custom text-xl text-slate-200 text-center">AGOTADO!</p>
+                        : isInCart(item.id)
                             ? <Button><Link to={"/cart"} >Ir al Carrito</Link></Button>
                             : <>
                                 <QuantitySelector
