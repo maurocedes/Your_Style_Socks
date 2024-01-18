@@ -15,6 +15,7 @@ const CartView = () => {
             <hr />
             <p className="font-custom text-slate-200">Dale estilo a tu carrito</p>
             <Button><Link to={"/"}>Volver</Link></Button>
+            <Button><Link to={"/checkout"}></Link>Terminar compra</Button>
             </div>
         )
     }

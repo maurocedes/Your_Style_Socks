@@ -3,7 +3,7 @@ export const Contact = () => {
 
 
     return(
-        <div className="ContactConteiner">
+        <div>
             <form className="flex flex-col gap-3 items-center justify-center" action="">
                 <h2 className="font-custom text-slate-200 text-3xl text-center">Dejanos tu mensaje, nuestro equipo te respondera a la brevedad.</h2>
                 <input className="p-4 rounded-xl w-96" type="text" placeholder="Tu nombre..."/>
