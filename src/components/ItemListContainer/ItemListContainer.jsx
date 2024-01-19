@@ -12,31 +12,31 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true)
 
 
-    const {categoryId} = useParams() 
-    
+    const { categoryId } = useParams()
+
 
     useEffect(() => {
         setLoading(true)
 
         const productosRef = collection(db, 'productos')
-        const docsRef = categoryId 
-        ? query (productosRef, where('category', '==', categoryId))
-        : productosRef 
+        const docsRef = categoryId
+            ? query(productosRef, where('category', '==', categoryId))
+            : productosRef
 
         getDocs(docsRef)
-        .then( (querySnapshot) => {
-            const docs = querySnapshot.docs.map(doc => {
-                return {
-                    ...doc.data(),
-                    id: doc.id
-                }
-            }) 
-            console.log(docs)
+            .then((querySnapshot) => {
+                const docs = querySnapshot.docs.map(doc => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                })
 
-            setProductos (docs)
-        })
-        .finally( () => setLoading(false))
-        
+
+                setProductos(docs)
+            })
+            .finally(() => setLoading(false))
+
 
         // pedirDatos()
         //     .then((data) => { 

@@ -11,7 +11,6 @@ const ItemDetail = ({ item }) => {
     const [cantidad, setCantidad] = useState(1)
     const { addToCart, isInCart } = useContext(CartContext)
 
-    console.log(isInCart(item.id))
 
 
     const addButton = () => {
