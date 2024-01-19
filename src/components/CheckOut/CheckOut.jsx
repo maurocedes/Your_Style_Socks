@@ -3,6 +3,8 @@ import { useState } from "react"
 
 const CheckOut = () => {
 
+
+
     const [values, setValues] = useState({
         nombre: "",
         direccion: "",
@@ -24,7 +26,9 @@ const CheckOut = () => {
         e.preventDefault()
         console.log('Submit')
         console.log(values)
+
     }
+
 
     return (
         <div className="container m-6">

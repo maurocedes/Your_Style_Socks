@@ -11,11 +11,11 @@ const CartView = () => {
     if (cart.length === 0) {
         return (
             <div className="container m-auto">
-<h2 className="font-custom text-slate-200 text-5xl">Tu Carrito está vacío</h2>
-            <hr />
-            <p className="font-custom text-slate-200">Dale estilo a tu carrito</p>
-            <Button><Link to={"/"}>Volver</Link></Button>
-            <Button><Link to={"/checkout"}></Link>Terminar compra</Button>
+                <h2 className="font-custom text-slate-200 text-5xl">Tu Carrito está vacío</h2>
+                <hr />
+                <p className="font-custom text-slate-200">Dale estilo a tu carrito</p>
+                <Button><Link to={"/"}>Volver</Link></Button>
+
             </div>
         )
     }
@@ -40,8 +40,11 @@ const CartView = () => {
                     ))
                 }
             </ul>
-            <h4 className="font-custom text-slate-200 text-5xl">TOTAL: $ {totalCart()}</h4>
-            <Button onClick={clearCart}>Vaciar carrito</Button>
+            <h4 className="font-custom text-slate-200 text-5xl my-4">TOTAL: $ {totalCart()}</h4>
+            <Button className="my-2" onClick={clearCart}>Vaciar carrito</Button>
+            <br />
+            <Button className="my-2" ><Link to={"/checkout"}>Terminar compra</Link></Button>
+
         </div>
     )
 }
